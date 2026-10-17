@@ -1,5 +1,7 @@
 package jp.gihyo.jenkinsbook.action;
 
+import java.util.Calendar;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -66,11 +68,11 @@ public class SampleAction {
         Calendar calendar = Calendar.getInstance();
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
         if (hour < 12) {
-            dto.setGreeting("Good morning");
+            dto.setMessage("Good morning");
         } else if (hour < 18) {
-            dto.setGreeting("Good afternoon");
+            dto.setMessage("Good afternoon");
         } else {
-            dto.setGreeting("Good evening");
+            dto.setMessage("Good evening");
         }
 
         HttpSession session = request.getSession(true);
