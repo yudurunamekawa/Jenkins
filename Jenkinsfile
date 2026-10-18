@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Get some code from a GitHub repository
-                git url: 'https://github.com/wdpressplus/Jenkins_Practical_Guide_3rd_Edition.git'
+                git url: 'https://github.com/yudurunamekawa/Jenkins.git'
             }
         }
 
@@ -36,7 +36,7 @@ pipeline {
         stage('Report of Static Analysis') {
             steps {
                 step([$class: 'CheckStylePublisher', canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '**/target/checkstyle-result.xml', unHealthy: ''])
-                step([$class: 'FindBugsPublisher', canComputeNew: false, defaultEncoding: '', excludePattern: '', healthy: '', includePattern: '', pattern: '**/target/findbugsXml.xml', unHealthy: ''])
+                step([$class: 'SpotBugsPublisher', canComputeNew: false, defaultEncoding: '', excludePattern: '', healthy: '', includePattern: '', pattern: '**/target/spotbugsXml.xml', unHealthy: ''])
             }
         }
    }
