@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     // Global Tool Configuration で Maven 3.5.0 を設定していること。
-                    def mvnHome = tool 'Maven 3'
+                    def mvnHome = tool 'Maven3'
                     if (env.OS == 'Windows_NT') {
                         bat "${mvnHome}/bin/mvn clean package"
                     } else {
