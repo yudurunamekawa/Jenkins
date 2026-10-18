@@ -5,8 +5,8 @@ plugins {
     id 'war'
 }
 
-sourceCompatibility = JavaVersion.VERSION_17
-targetCompatibility = JavaVersion.VERSION_17
+sourceCompatibility = 17
+targetCompatibility = 17
 
 group = 'jp.gihyo.jenkinsbook'
 version = '1.0.0'
