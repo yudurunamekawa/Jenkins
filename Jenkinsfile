@@ -35,9 +35,11 @@ pipeline {
         // Mark the Static Analysis 'stage'....
         stage('Report of Static Analysis') {
             steps {
-                step([$class: 'CheckStylePublisher', canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '**/target/checkstyle-result.xml', unHealthy: ''])
-                step([$class: 'SpotBugsPublisher', canComputeNew: false, defaultEncoding: '', excludePattern: '', healthy: '', includePattern: '', pattern: '**/target/spotbugsXml.xml', unHealthy: ''])
+                recordIssues tools: [
+                    checkStyle(pattern: '**/target/checkstyle-result.xml'),
+                    spotBugs(pattern: '**/target/spotbugsXml.xml')
+                ]
             }
         }
-   }
+    }
 }
