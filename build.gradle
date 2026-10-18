@@ -27,11 +27,11 @@ dependencies {
                 'org.easymock:easymock:3.4'
 
     // Checkstyle 最新版
-    checkstyle 'com.puppycrawl.tools:checkstyle:8.45.1'
+    checkstyle 'com.puppycrawl.tools:checkstyle:6.11.2'
 }
 
 checkstyle {
-    toolVersion = "8.45.1"
+    toolVersion = "6.11.2"
 }
 
 checkstyleMain {
