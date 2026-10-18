@@ -127,17 +127,19 @@
         <artifactId>spotbugs-maven-plugin</artifactId>
         <version>4.7.3.0</version>
         <executions>
-          <execution>
-            <id>spotbugs</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>spotbugs</goal>
-            </goals>
-            <configuration>
-              <xmlOutput>true</xmlOutput>
-              <failOnError>false</failOnError>
-            </configuration>
-          </execution>
+            <execution>
+                <id>spotbugs</id>
+                <phase>verify</phase>
+                <goals>
+                    <goal>spotbugs</goal>
+                </goals>
+                <configuration>
+                    <xmlOutput>true</xmlOutput>
+                    <outputDirectory>${project.build.directory}</outputDirectory>
+                    <outputFile>spotbugsXml.xml</outputFile>
+                    <failOnError>false</failOnError>
+                </configuration>
+            </execution>
         </executions>
       </plugin>
 
