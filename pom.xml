@@ -68,6 +68,22 @@
     <jacoco.include.package>**/*</jacoco.include.package>
   </properties>
 
+  <repositories>
+    <repository>
+      <id>nexus</id>
+      <name>Nexus</name>
+      <url>https://localhost:8081/nexus/content/groups/public</url>
+    </repository>
+  </repositories>
+
+  <distributionManagement>
+    <repository>
+      <id>releases</id>
+      <name></name>
+      <url>https://localhost:8081/nexus/content/repositories/releases</url>
+    </repository>
+  </distributionManagement>
+
   <build>
     <plugins>
 
