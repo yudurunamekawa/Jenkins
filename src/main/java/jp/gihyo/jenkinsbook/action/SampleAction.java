@@ -8,6 +8,15 @@ import javax.servlet.http.HttpSession;
 import jp.gihyo.jenkinsbook.dto.SampleDTO;
 
 /**
+     * Morning end hour threshold.
+     */
+    private static final int MORNING_END_HOUR = 12;
+    /**
+     * Evening start hour threshold.
+     */
+    private static final int EVENING_START_HOUR = 18;
+
+/**
  * DTO class for SampleServlet.
  */
 public class SampleAction {
@@ -67,9 +76,9 @@ public class SampleAction {
 
         Calendar calendar = Calendar.getInstance();
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
-        if (hour < 12) {
+        if (hour < MORNING_END_HOUR) {
             dto.setMessage("Good morning");
-        } else if (hour < 18) {
+        } else if (hour < EVENING_START_HOUR) {
             dto.setMessage("Good afternoon");
         } else {
             dto.setMessage("Good evening");
