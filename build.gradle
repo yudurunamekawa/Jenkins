@@ -64,8 +64,8 @@ task wrapper(type: Wrapper) {
 uploadArchives {
     repositories {
         mavenDeployer {
-            repository(url: 'http://localhost:8081/nexus/content/repositories/releases') {
-                authentication(userName: 'admin', password: 'admin123')
+            repository(url: 'http://localhost:8081/repository/releases') {
+                authentication(userName: 'admin', password: 'ynamekawa')
             }
         }
     }

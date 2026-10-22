@@ -80,7 +80,7 @@
     <repository>
       <id>releases</id>
       <name></name>
-      <url>https://localhost:8081/nexus/content/repositories/releases</url>
+      <url>http://localhost:8081/repository/releases</url>
     </repository>
   </distributionManagement>
 
