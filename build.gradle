@@ -54,7 +54,7 @@ test {
 
 war {
     dependsOn check
-    baseName = project.ext.artifactId
+    archiveBaseName.set(project.ext.artifactId)
 }
 
 task wrapper(type: Wrapper) {
