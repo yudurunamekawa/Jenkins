@@ -1,3 +1,7 @@
+package jp.gihyo.jenkinsbook.dto;
+
+import java.io.Serializable;
+
 public class SampleDTO implements Serializable {
 
     private String firstName;
