@@ -57,10 +57,6 @@ war {
     archiveBaseName.set(project.ext.artifactId)
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '8.7'
-}
-
 /* ★★★ ここから新しい Nexus deploy 設定 ★★★ */
 
 publishing {
