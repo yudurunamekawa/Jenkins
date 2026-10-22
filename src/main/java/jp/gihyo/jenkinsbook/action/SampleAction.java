@@ -7,8 +7,6 @@ import javax.servlet.http.HttpSession;
 
 import jp.gihyo.jenkinsbook.dto.SampleDTO;
 
-
-
 /**
  * DTO class for SampleServlet.
  */
