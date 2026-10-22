@@ -7,22 +7,19 @@ import javax.servlet.http.HttpSession;
 
 import jp.gihyo.jenkinsbook.dto.SampleDTO;
 
+
+
 /**
-     * Morning end hour threshold.
-     */
+ * DTO class for SampleServlet.
+ */
+public class SampleAction {
+    
     private static final int MORNING_END_HOUR = 12;
     /**
      * Evening start hour threshold.
      */
     private static final int EVENING_START_HOUR = 18;
 
-/**
- * DTO class for SampleServlet.
- */
-public class SampleAction {
-    /**
-     * First name of the user.
-     */
     private String firstName;
     /**
      * Last name of the user.
