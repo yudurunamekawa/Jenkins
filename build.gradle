@@ -76,6 +76,7 @@ publishing {
     repositories {
         maven {
             url = uri("http://localhost:8081/repository/releases/")
+            allowInsecureProtocol = true
             credentials {
                 username = "admin"
                 password = "ynamekawa"   // 推さんが Nexus にログインしているパスワード
