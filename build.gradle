@@ -60,3 +60,13 @@ war {
 task wrapper(type: Wrapper) {
     gradleVersion = '8.7'
 }
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: 'http://localhost:8081/nexus/content/repositories/releases') {
+                authentication(userName: 'admin', password: 'admin123')
+            }
+        }
+    }
+}
