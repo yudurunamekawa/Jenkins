@@ -69,14 +69,13 @@ publishing {
             from components.web
             groupId = 'jp.gihyo.jenkinsbook'
             artifactId = 'sampleproject'
-            version = '1.0.0'
+            version = '1.0.3'
         }
     }
 
     repositories {
         maven {
-            allowInsecureProtocol = true
-            url = uri("http://127.0.0.1:8081/repository/releases")
+            url = uri("http://localhost:8081/repository/releases")
             credentials {
                 username = "admin"
                 password = "ynamekawa"   // 推さんが Nexus にログインしているパスワード
