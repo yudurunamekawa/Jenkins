@@ -3,6 +3,7 @@ plugins {
     id 'checkstyle'
     id 'jacoco'
     id 'war'
+    id 'maven-publish'
 }
 
 sourceCompatibility = 17
@@ -26,7 +27,6 @@ dependencies {
     testCompile 'junit:junit:4.12',
                 'org.easymock:easymock:3.4'
 
-    // Checkstyle 最新版
     checkstyle 'com.puppycrawl.tools:checkstyle:6.11.2'
 }
 
@@ -61,11 +61,24 @@ task wrapper(type: Wrapper) {
     gradleVersion = '8.7'
 }
 
-uploadArchives {
+/* ★★★ ここから新しい Nexus deploy 設定 ★★★ */
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.web
+            groupId = 'jp.gihyo.jenkinsbook'
+            artifactId = 'sampleproject'
+            version = '1.0.0'
+        }
+    }
+
     repositories {
-        mavenDeployer {
-            repository(url: 'http://localhost:8081/repository/releases') {
-                authentication(userName: 'admin', password: 'ynamekawa')
+        maven {
+            url = uri("http://localhost:8081/repository/releases/")
+            credentials {
+                username = "admin"
+                password = "ynamekawa"   // 推さんが Nexus にログインしているパスワード
             }
         }
     }
