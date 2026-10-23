@@ -65,13 +65,13 @@ publishing {
             from components.web
             groupId = 'jp.gihyo.jenkinsbook'
             artifactId = 'sampleproject'
-            version = '1.0.3'
+            version = '1.0.0'
         }
     }
 
     repositories {
         maven {
-            url = uri("http://localhost:8081/repository/releases")
+            url = uri("http://localhost:8081/repository/gradle-releases")
             allowInsecureProtocol = true
             credentials {
                 username = "admin"
